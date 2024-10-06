@@ -32,14 +32,20 @@ app.use("/api/analytics", analyticsRoutes);
 
 const helmet = require('helmet');
 
-app.use(helmet.contentSecurityPolicy({
-  directives: {
-    defaultSrc: ["'none'"],
-    scriptSrc: ["'self'", "https://static.cloudflareinsights.com"],
-    connectSrc: ["'self'"],
-    imgSrc: ["'self'", "data:"],
-  }
-}));
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'none'"],
+        scriptSrc: ["'self'", "'unsafe-eval'", "'unsafe-inline'", "https://static.cloudflareinsights.com"],
+        connectSrc: ["'self'"],
+        imgSrc: ["'self'", "data:"],
+        styleSrc: ["'self'"],
+      },
+    },
+  })
+);
+
 
 
 if(process.env.NODE_ENV === 'production') {
