@@ -30,8 +30,6 @@ app.use("/api/coupons", couponRoutes);
 app.use("/api/payments", paymentRoutes);
 app.use("/api/analytics", analyticsRoutes);
 
-const helmet = require('helmet');
-
 app.use(
   helmet({
     contentSecurityPolicy: {
