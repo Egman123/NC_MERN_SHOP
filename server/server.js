@@ -29,6 +29,18 @@ app.use("/api/coupons", couponRoutes);
 app.use("/api/payments", paymentRoutes);
 app.use("/api/analytics", analyticsRoutes);
 
+const helmet = require('helmet');
+
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'none'"],
+    scriptSrc: ["'self'", "https://static.cloudflareinsights.com"],
+    connectSrc: ["'self'"],
+    imgSrc: ["'self'", "data:"],
+  }
+}));
+
+
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '/client/dist')))
 
