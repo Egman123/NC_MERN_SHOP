@@ -36,7 +36,8 @@ app.use(helmet.contentSecurityPolicy({
   directives: {
     defaultSrc: ["'self'"],
     scriptSrc: ["'self'", "https://static.cloudflareinsights.com", "https://js.stripe.com"], // Разрешаем скрипты с этого домена
-    frameSrc: ["'self'", "https://js.stripe.com"]
+    frameSrc: ["'self'", "https://js.stripe.com"],
+    imgSrc: ["'self'", "data:", "*"]
   }
 }));
 
