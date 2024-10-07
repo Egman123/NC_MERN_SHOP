@@ -32,6 +32,14 @@ app.use("/api/analytics", analyticsRoutes);
 
 app.use(helmet());
 
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'", "https://static.cloudflareinsights.com"] // Разрешаем скрипты с этого домена
+  }
+}));
+
+
 
 
 if(process.env.NODE_ENV === 'production') {
