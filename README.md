@@ -1,5 +1,7 @@
 # E-Commerce MERN Store App🛒
 ![07 10 2024_15 47 39_REC](https://github.com/user-attachments/assets/d1272f61-f26b-4fc4-9714-f2aab33eb526)
+![07 10 2024_16 06 26_REC](https://github.com/user-attachments/assets/978ec8a5-e7ce-4e0b-92bb-fe38d9e6f8f8)
+
 About This Course:
 
 🚀 Project Setup
