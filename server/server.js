@@ -38,7 +38,7 @@ app.use(
         scriptSrc: ["'self'", "'unsafe-eval'", "'unsafe-inline'", "https://static.cloudflareinsights.com"],
         connectSrc: ["'self'"],
         imgSrc: ["'self'", "data:"],
-        styleSrc: ["'self'"],
+        styleSrc: ["'self'", "'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='"] // Разрешаем использование стилей с определённым хэшем
       },
     },
   })
